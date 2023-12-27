@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Cosntructor Function</title>
+</head>
+<body>
+    <script>
+
+        function Person(){
+            this.firstName = "";
+            this.lastName = "";
+            this.sayHello = function(name){
+                console.log(`Hello ${name} my name is ${this.firstName}`);
+            }
+        }
+
+        const eko = new Person();
+        eko.firstName = "Eko";
+        eko.sayHello("Joko");
+
+
+        const budi = new Person();
+
+        budi.firstName = "Budi";
+        budi.lastName = "Nugraha";
+        budi.sayHello("Samsul");
+        
+        console.log(eko);
+        console.log(budi);
+
+    </script>
+</body>
+</html>
