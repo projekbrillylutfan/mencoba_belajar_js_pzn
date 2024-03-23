@@ -7,7 +7,34 @@
 </head>
 <body>
     <script>
-        
+        // object freeze
+        // const person = {
+        //     firstName: "John",
+        //     lastName: "Doe",
+        // }
+
+        // Object.freeze(person);
+
+        // person.firstName = "Jane";// tidak bisa di rubah
+
+        // delete person.firstName;// tidak bisa di hapus
+        // console.log(person);
+
+        // object assign
+        // const target = {firstName: "John"};
+        // const source = {lastName: "Doe"};
+
+        // Object.assign(target, source);
+        // console.log(target);
+
+        // object property name and value
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+        }
+
+        console.log(Object.values(person));
+        console.log(Object.getOwnPropertyNames(person));
     </script>
 </body>
 </html>
