@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // cara membuat regex
+        // const regex1 = /[abc]/;
+        // const regex2 = new RegExp("[abc]");
+        // const regex3 = new RegExp(/[abc]/);
+
+        // contoh eksekusi regex
+        // const name = "John Doe Doe ayam dua tiga satu";
+        // const regex = /John/;
+
+        // let result = regex.exec(name);
+        // console.log(result);
+
+        // let test = regex.test(name);
+        // console.log(test);
+
+        // // jika regex tidak menemukan kata yang dicari
+        // console.log(regex.exec("tidak ada"));
+        // console.log(regex.test("tidak ada"));
+
+        // regex modifer
+        // const name = "John Doe Doe ayam dua tiga satu";
+        // const regex1 = /doe/g
+        // const regex2 = /Doe/ig
+
+        // let result;
+
+        // while ((result = regex1.exec(name)) !== null) {
+        //     console.log('regex 1: ',result);
+        // }
+
+        // while ((result = regex2.exec(name)) !== null) {
+        //     console.log('regex 2: ',result);
+        // }
+
+        // contoh fitur regex
+        const regex = /ek[aiueo]/ig;
+        const text = "eko ado eki eka ejo emi elo eke"
+
+        let result;
+
+        while ((result = regex.exec(text)) !== null) {
+            console.log(result)
+        }
+    </script>
+</body>
+</html>
