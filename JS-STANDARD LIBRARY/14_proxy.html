@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // membuat handler
+        const target = {
+            
+        }
+
+        const handler = {
+            get: function (target, prop) {
+                console.log(`Get ${prop}`);
+                return target[prop];
+            },
+            set: function (target, prop, value) {
+                console.log(`Set ${prop} = ${value}`);
+                target[prop] = value;
+            } 
+        }
+
+        const proxy = new Proxy(target, handler);
+        proxy.firstName = "John";
+        proxy.lastName = "Doe";
+
+        console.log(proxy.firstName);
+        console.log(proxy.lastName);
+    </script>
+</body>
+</html>

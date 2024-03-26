@@ -42,14 +42,22 @@
         // }
 
         // contoh fitur regex
-        const regex = /ek[aiueo]/ig;
+        // const regex = /ek[aiueo]/ig;
         const text = "eko ado eki eka ejo emi elo eke"
 
-        let result;
+        // let result;
 
-        while ((result = regex.exec(text)) !== null) {
-            console.log(result)
-        }
+        // while ((result = regex.exec(text)) !== null) {
+        //     console.log(result)
+        // }
+
+        // regex di string
+        console.log(text.match(/ek[aiueo]/ig));
+        console.log(text.search(/ek[aiueo]/ig));
+        // di replace semua karena regex
+        console.log(text.replace(/ek[aiueo]/ig, "keren"));
+        console.log(text.replaceAll(/ek[aiueo]/ig, "keren"));
+        console.log(text.split(/e/ig));
     </script>
 </body>
 </html>

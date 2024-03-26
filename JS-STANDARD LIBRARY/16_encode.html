@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // encodeURI dan decodeURI
+
+        // const url = "https://google.com/?name=John goreng selatan";
+        // console.log(url)
+
+        // const encoded = encodeURI(url);
+        // console.log("sudah di encode", encoded);
+
+        // const decode = decodeURI(encoded);
+        // console.log(decode);
+
+        // encodeURIComponent dan decodeURIComponent
+
+        const value = "John&goreng=selatan;";
+        const url = "https://google.com/?name="
+
+        const encoded = encodeURIComponent(value);
+        console.log("hasil encoded", url + encoded)
+
+        const decoded = decodeURIComponent(encoded);
+        console.log("hasil decoded", url + decoded)
+    </script>
+</body>
+</html>
