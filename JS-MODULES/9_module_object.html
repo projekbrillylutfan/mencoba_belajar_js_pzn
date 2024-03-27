@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import * as Eko from "./script/9_module_object.js";
+
+        console.log(Eko.firstName);
+        console.log(Eko.middleName);
+        console.log(Eko.lastName);
+
+        Eko.hello();
+
+        const person = new Eko.Person();
+        console.log(person.name);
+    </script>
+</body>
+</html>

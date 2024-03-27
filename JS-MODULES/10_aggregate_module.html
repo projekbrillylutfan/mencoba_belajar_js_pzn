@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import {Person, sayHello, sayGoodbye, sum} from "./script/10_aggregate_modul.js";
+
+        const person = new Person("John", 20);
+        person.sayHello("Jane");
+        sayHello("Jane");
+        sayGoodbye("Jane");
+        console.log(sum(10, 20));
+    </script>
+</body>
+</html>
