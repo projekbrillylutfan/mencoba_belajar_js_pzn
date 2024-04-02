@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>id :</td>
+          <td id="id"></td>
+        </tr>
+        <tr>
+          <td>name :</td>
+          <td id="name"></td>
+        </tr>
+        <tr>
+          <td>price :</td>
+          <td id="price"></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      const getProducts = () => {
+        return new Promise((resolve, reject) => {
+          const ajax = new XMLHttpRequest();
+          ajax.open("GET", "api/products.json");
+          ajax.onload = () => {
+            if (ajax.status === 200) {
+              resolve(JSON.parse(ajax.responseText));
+            } else {
+              reject(ajax.responseText);
+            }
+          };
+          ajax.send();
+        });
+      };
+
+      getProducts()
+        .then((response) => {
+          // Check if response is already an object
+          if (typeof response === "object") {
+            return response;
+          } else {
+            // Parse JSON if response is a JSON string
+            return JSON.parse(response);
+          }
+        })
+        .then((json) => {
+          document.getElementById("id").textContent = json.id;
+          document.getElementById("name").textContent = json.name;
+          document.getElementById("price").textContent = json.price;
+        })
+        .catch((error) => console.error(error))
+        .finally(() => console.log("finally"));
+    </script>
+  </body>
+</html>
