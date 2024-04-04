@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="buttonTask">look at me</button>
+    <script>
+        // const showLog = (total) =>{
+        //     for (let i = 0; i < total; i++) {
+        //         console.log(i)
+        //     }
+        // }
+
+        // document.getElementById("buttonTask").onclick = () => {
+        //     console.log("start log");
+        //     showLog(10000000)
+        //     console.log("end log")
+        // }
+
+        // dengan worker
+        const worker = new Worker("worker.js");
+        // worker.onmessage = callback
+        worker.addEventListener("message", () => {
+            console.log(message.data)
+        })
+
+        document.getElementById("buttonTask").onclick = () => {
+            worker.postMessage(10000000)
+        }
+    </script>
+</body>
+</html>

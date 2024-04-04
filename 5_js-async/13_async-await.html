@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // return dengan promise biasa
+      //   const getNamePromise = () => {
+      //     return new Promise((resolve, reject) => {
+      //       resolve("Hafizh");
+      //     });
+      //   };
+      //   getNamePromise()
+      //     .then((result) => {
+      //       console.log(result);
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     });
+
+      // return dengan async await
+      //   const getNameAsync = async () => {
+      //     return "eko";
+      //   };
+
+      //   getNameAsync().then((result) => {
+      //     console.log(result);
+      //   })
+
+      // penggunaan await
+      const getProduct = () => {
+        return fetch("api/productss.json", {
+          method: "GET",
+        }).then((res) => res.json());
+      };
+
+      // const getProductName = async () => {
+      //     Response = await getProduct();
+      //     return Response.name
+      // }
+      // console.log(getProductName())
+
+      // error handling try catch
+      const getProductName = async () => {
+        try {
+          Response = await getProduct();
+          return Response.name;
+        } catch (e) {
+          return `produk tidak ditemukan, dengan error ${e}`
+        }
+      };
+
+      getProductName().then((result) => {
+        console.log(result);
+      })
+    </script>
+  </body>
+</html>
